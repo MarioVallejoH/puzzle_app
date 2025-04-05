@@ -7,6 +7,7 @@ import 'package:natakapp/core/layouts/main_page_layout.dart';
 import 'package:natakapp/core/locator.dart';
 import 'package:natakapp/core/service/navigation_service.dart';
 import 'package:natakapp/core/views/page_404.dart';
+import 'package:natakapp/features/game2/presentation/bloc/game2_bloc_bloc.dart';
 
 import 'features/word-search/presentation/bloc/word_search_bloc.dart';
 
@@ -22,7 +23,10 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [BlocProvider(create: (_) => WordSearchBloc())],
+      providers: [
+        BlocProvider(create: (_) => WordSearchBloc()),
+        BlocProvider(create: (_) => Game2BlocBloc()),
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: lightTheme,

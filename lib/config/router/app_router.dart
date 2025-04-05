@@ -2,6 +2,7 @@ import 'package:fluro/fluro.dart';
 import 'package:flutter/foundation.dart';
 import 'package:natakapp/config/router/routes.dart';
 import 'package:natakapp/core/views/page_404.dart';
+import 'package:natakapp/features/game2/presentation/game_2_screen.dart';
 import 'package:natakapp/features/word-search/presentation/word_search_main_screen.dart';
 
 class AppRouter {
@@ -11,6 +12,11 @@ class AppRouter {
     router.define(
       Routes.wordSearch,
       handler: _wordSearchHandler,
+      transitionType: transition,
+    );
+    router.define(
+      Routes.maze,
+      handler: _wordMazeHandler,
       transitionType: transition,
     );
 
@@ -27,6 +33,11 @@ class AppRouter {
   static final Handler _wordSearchHandler = Handler(
     handlerFunc: (context, params) {
       return WordSearchMainScreen();
+    },
+  );
+  static final Handler _wordMazeHandler = Handler(
+    handlerFunc: (context, params) {
+      return Game2Screen();
     },
   );
 }

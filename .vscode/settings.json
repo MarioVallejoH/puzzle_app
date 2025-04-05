@@ -1,5 +1,9 @@
 {
     "cSpell.words": [
         "natakapp"
+    ],
+    "conventionalCommits.scopes": [
+        "Word Search module",
+        "Maze"
     ]
 }
